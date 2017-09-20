@@ -1,0 +1,32 @@
+{
+  "name": "eatdaburger",
+  "version": "1.0.0",
+  "description": "Eat-Da-Burger app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AustinSFleet/Burger.git"
+  },
+  "keywords": [
+    "express",
+    "mysql",
+    "handlebars",
+    "body-parser"
+  ],
+  "author": "Austin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AustinSFleet/Burger/issues"
+  },
+  "homepage": "https://github.com/AustinSFleet/Burger#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.1"
+  }
+}
