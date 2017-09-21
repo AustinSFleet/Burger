@@ -26,9 +26,44 @@ function objToSql(ob) {
 
 var orm = {
 
-    // SQL statement functions will go here
-    // i.e. get burger names from DB
-    // also need to parse them out by colName
+  getBurgers : function(eatStatus, cb) {
+    var queryString = "SELECT * FROM burgers WHERE devoured = " + eatStatus + ";";
+    connection.query(queryString, function(err, result){
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    })
+  },
+  createBurgers : function(burgerName, cb){
+    var queryString = "INSERT INTO burgers (burger, devoured) VALUES (" + burgerName + ", 0)";
+    connection.query(queryString, function (err, result){
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    })
+  },
+  eatBurgers : function(id, cb){
+    var queryString = "UPDATE burgers SET devoured = 1 WHERE id = " + id;
+    connection.query(queryString, function(err, result){
+      cb(result);
+    })
+  },
+  unEatBurgers : function(id, cb){
+    var queryString = "UPDATE burgers SET devoured = 0 WHERE id = " + id;
+    connection.query(queryString, function(err, result){
+      cb(result);
+  })
+},
+deleteBurgers : function (id, cb){
+  var queryString = "DELETE FROM burgers WHERE id = " + id;
+  connection.query(queryString, function (err, result){
+    cb(result);
+  })
+}
+  
+    
 
 };
 
